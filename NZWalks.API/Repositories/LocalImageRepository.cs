@@ -17,7 +17,7 @@ namespace NZWalks.API.Repositories
         }
         public async Task<Image> Upload(Image image)
         {
-            var localFilePath = Path.Combine(webHostEnvironment.ContentRootPath, "Images", $"{image.FileName}.{image.FileExtension}");
+            var localFilePath = Path.Combine(webHostEnvironment.ContentRootPath, "Images", $"{image.FileName}{image.FileExtension}");
 
             // upload image to local path
             using var stream = new FileStream(localFilePath, FileMode.Create);
